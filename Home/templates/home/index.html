@@ -1,0 +1,84 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}
+TeachersAnywhere || Find best teachers in DELHI NCR
+{% endblock title %}
+
+{% block upperbody %}
+<div class="container-fluid" id="hero">
+    <div class="row">
+        <div class="col-12 hero-area">
+            <div id="overlay">
+            </div>
+            <div id="text">
+                <h1 class="hero-heading">Welcome to TeachersAnywhere</h1>
+                <a href="{% url 'findTeacher' %}"><button class="btn btn-outline-light mt-5 hero-btn">Find Teachers</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock upperbody %}
+
+{% block lowerbody %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3"></div>
+        <div class="col-12 text-center pb-5">
+            <h1 class="overview-head">Overview</h1>
+            <p class="overview-text">
+                TeachersAnywhere is a non-profit website made for students by students. 
+                It aims to help students connect with tution centres and teachers all across Delhi. 
+                It was developed by Ayush Bansal (a class 12th student) in year 2020. 
+                With an easy to use interface, students can access to records about the tuition centres for Free. 
+                TeachersAnywhere also provides option to choose different classes and area to customise and further simplify their search. 
+                Our marketing manager Ashish Jindal is looking forward to expand our reach so as to provide students with a wide range of options. 
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3"></div>
+        <div class="col-12 p-5 counter-area">
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 text-center">
+                    <span class="conter-head">Areas Covered </span><br>
+                    <span class="conter-head"><i class="fas fa-map-marked-alt"></i></span><br>
+                    <span id="count1"></span><span class="conter-head">+</span>
+                </div>
+                <div class="col-lg-4 col-sm-12 text-center">
+                    <span class="conter-head">Teachers Available</span><br>
+                    <span class="conter-head"><i class="fas fa-chalkboard-teacher"></i></span><br>
+                    <span id="count2"></span><span class="conter-head">+</span>
+                </div>
+                <div class="col-lg-4 col-sm-12 text-center">
+                    <span class="conter-head">Students Connected</span><br>
+                    <span class="conter-head"><i class="fas fa-user-graduate"></i></span><br>
+                    <span id="count3"></span><span class="conter-head">+</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3"></div>
+        <div class="col-12 text-center">
+            <h1 class="overview-head">Motivation</h1>
+            <p class="overview-text pb-5">
+                The motivation for this website comes from our struggles to find good tuition centres in class 11 and 12th.
+                 With no formal records available about the tution centres we had to rely only on word-of mouth to find about teachers. 
+                 Finding good teacher can make or break your result. Our website provides you with many options so that you can make a better choice.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock lowerbody %}

@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/b9ac59394a.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</head> 
+<body>
+    <!-- Loader Area starts -->
+
+    <div id="preLoader">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 loaderMargin"></div>
+                <div class="col-12">
+                    <div class="centered">
+                    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loader Area ends -->
+    <!-- Post Loader Area starts -->
+
+    <div id="postLoader">
+
+        {% block upperbody %}
+
+        {% endblock upperbody %}
+
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#ff715b;font-size:1em">
+            <a class="navbar-brand" href="{% url 'index' %}">TeachersAnywhere</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'findTeacher' %}">Find Teachers</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+        {% block lowerbody %}
+
+        {% endblock lowerbody %}
+        <footer class="bg-dark">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-12 p-4 text-white text-center">
+                      <span class="footer-text"> This website is designed and maintained by Ayush Bansal </span>
+                  </div>
+              </div>
+          </div>
+          </footer>
+    </div>
+    
+    <!-- Post Loader Area ends -->
+</body>
+</html>

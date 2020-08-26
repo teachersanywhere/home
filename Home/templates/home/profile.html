@@ -1,0 +1,49 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}
+TeachersAnywhere || Teacher Profile
+{% endblock title %}
+
+{% block lowerbody %}
+
+<div class="container-fluid p-5">
+    <div class="row">
+        <div class="col-12 p-5" id="profile">
+            <div class="text-center w-100"><span class="profile-head">Teacher Profile</span></div>
+            <div class="row">
+                
+                <div class=" col-lg-8 col-sm-12 p-5">
+                    <span class="profile-data">Name: {{data.name}}</span><br>
+                    <span class="profile-data">Working Experience: {{data.experience}} years</span><br>
+                    <span class="profile-data">Classes Teaching: {{data.classes}}</span><br>
+                    <span class="profile-data">Contact: {{data.phone}}</span><br>
+                    <span class="profile-data">Method of Teaching: {{data.teacher_type}}</span><br>
+                    
+                    {% if data.address %}
+                        <span class="profile-data">Address : {{data.address}} (Show on <a href="https://maps.google.com/?q={{data.address}}" target="_blank">Maps</a>)</span><br>
+                    {% endif %}
+                    <span class="profile-data">Subjects : 
+                        {% if data.subject1 %} 
+                        {{data.subject1}}
+                        {% endif %}   
+                        {% if data.subject2 %} 
+                        , {{data.subject2}}
+                        {% endif %}   
+                        {% if data.subject3 %} 
+                        , {{data.subject3}}
+                        {% endif %}   
+                    </span>
+    
+                </div>
+                <div class="col-lg-4 col-sm-12 profileImage-holder">
+                    <img src="../media/{{data.photo}}" alt="#" class="profileImage">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gap2"></div>
+{% endblock lowerbody %}

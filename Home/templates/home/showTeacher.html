@@ -1,0 +1,60 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}
+TeachersAnywhere || Teachers in your area
+{% endblock title %}
+
+{% block lowerbody %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-5"></div>
+        <div class="col-lg-2 col-sm-12"></div>
+        <div class="col-lg-8 col-sm-12">
+        <div class="row">
+            {% if teachers %}
+            {% for teacher in teachers %}
+
+            <div class="col-12 cardDiv">
+                <div class="row">
+                    <div class="col-7 teacherCard text-uppercase">
+                        <span class="teacherName">Name : {{teacher.name}} </span><br>
+                        <span class="teacherInfo">Classes Teaching : {{teacher.classes}}</span><br>
+                        <span class="teacherInfo">Type : {{teacher.teacher_type}}</span><br>
+                        
+                        
+                        <span class="teacherInfo">Subjects : 
+                            {% if teacher.subject1 %} 
+                            {{teacher.subject1}}
+                            {% endif %}   
+                            {% if teacher.subject2 %} 
+                            {{teacher.subject2}}
+                            {% endif %}   
+                            {% if teacher.subject3 %} 
+                            {{teacher.subject3}}
+                            {% endif %}   
+                        </span>
+                        
+                    </div>
+                    <div class="col-5 align-right">
+                        <img src="media/{{teacher.photo}}" alt="#" class="teacherImage">
+                    </div>
+                    <div class="col-12 p-3">
+                        Click <a href="{% url 'profile' teacher_id=teacher.id %}">here</a> to view profile
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 pt-3"></div>
+            {% endfor %}
+            {% else %}
+            <h1>No teacher found!</h1>
+            {% endif %}
+        </div>
+        </div> 
+        <div class="col-lg-2 col-sm-12"></div>
+    </div>
+</div>
+
+{% endblock lowerbody %}
