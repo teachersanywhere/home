@@ -295,6 +295,10 @@ html{
     .gap2{
       height: 10vh;
     }
+    .course-head{
+      font-size: 2.5em;
+      font-family: 'Special Elite', cursive;
+    }
   }
 
 .navbar-brand, #navbarText, label, .footer-text{
@@ -309,4 +313,31 @@ html{
   background-size: cover;
   background-position: center;
   overflow: hidden;
+}
+
+#sixth-code{
+  background-image: url(../img/c1.jpg);
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 40vh;
+}
+#seventh-code{
+  background-image: url(../img/c2.jpg);
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 40vh;
+}
+#eighth-code{
+  background-image: url(../img/c3.jpg);
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 40vh;
+}
+
+.course-text{
+  font-family: 'Lobster', cursive;
+  font-size: 1.5em;
 }

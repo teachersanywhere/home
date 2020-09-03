@@ -44,3 +44,16 @@ def profile(request, teacher_id):
     }
 
     return render(request, "home/profile.html", context)
+
+def courses(request):
+    return render(request, "home/courses.html")
+
+def coding(request, class_id):
+    if class_id == 6:
+        return render(request, "home/class6.html")
+    elif class_id == 7:
+        return render(request, "home/class7.html")
+    elif class_id == 8:
+        return render(request, "home/class8.html")
+    else:
+        return HttpResponse('Not Found')
